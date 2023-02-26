@@ -13,7 +13,7 @@ def write_msg(user_id, message):
         vk.method('messages.send', {'user_id': user_id, 'message': message, 'random_id': randrange(10 ** 7)})
     except ApiError:
         for event in longpoll.listen():
-                      write_msg(event.user_id,'К сожаленю, получился слишком длинный список. Покажу в следующий раз. Перезапусти программу "бот"')
+                      write_msg(event.user_id,'К сожалению, получился слишком длинный список. Покажу в следующий раз. Перезапусти программу "бот"')
                       sys.exit()
         print('ошибка ApiError "слишком длинное сообщение"' )
     else:
